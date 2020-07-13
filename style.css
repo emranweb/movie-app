@@ -1,0 +1,176 @@
+:root {
+  --primary-color: #0f0f0f;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Lora', serif;
+  font-size: normal;
+  line-height: normal;
+  background-color: var(--primary-color);
+}
+
+
+.nav-area {
+  padding: 15px 0px;
+}
+
+
+
+.logo {
+  font-size: 50px;
+  font-weight: 700;
+  background: -webkit-linear-gradient(#ffffff, #0f0f0f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-item a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  padding: 0px 15px;
+}
+
+.login a {
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  padding: 0px 15px;
+}
+
+.header {
+  background-image: url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 160px 0px;
+  background-position: center center;
+}
+
+
+
+h1 {
+  font-size: 89px;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+}
+
+
+.search-area {
+  margin-bottom: 100px;
+}
+
+.search-wrapper {
+  width: 80%;
+  margin: -30px auto 0px auto;
+  position: relative;
+}
+
+.search-area input {
+  padding: 15px 15px;
+  border-radius: 0px;
+}
+
+.sort-area {
+  margin-bottom: 40px;
+
+}
+
+.showcase-area select {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 1px solid white;
+  color: #fff;
+  padding: 7px 17px;
+  margin-right: 40px;
+  border-radius: 5px;
+
+}
+
+.showcase-area option {
+  background-color: var(--primary-color);
+}
+
+
+
+.movie-suggetion-list{
+  position: absolute;
+  top: 56px;
+  /* overflow-y: scroll;
+  height: 562px; */
+  background: #1c1c1c;
+}
+
+
+.showcase-area h2 {
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+
+.movie-list {
+  display: flex;
+}
+
+.movie-item {
+  flex: 1 0 20%;
+  max-width: 20%;
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+
+}
+
+
+.movie-suggetion-list .item{
+  display: block;
+  padding: 10px 10px;
+  border-bottom: 2px solid #0f0f0f;
+  transition: all .3s ease;
+}
+
+.movie-suggetion-list .item:hover{
+background-color: #000;  
+cursor: pointer;
+}
+
+.title {
+  font-size: 23px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.poster {
+  width: 80px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+
+
+.suggetion-info{
+  display: inline-block;
+  padding-left: 10px;
+  position: relative;
+  top: 15px;
+}
+
+.year{
+  display: inline-block;
+  font-size: 16px;
+  color: #fff;
+
+}
