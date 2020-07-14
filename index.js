@@ -62,18 +62,19 @@ function inputSearch(event) {
                     ancher.setAttribute("herf", "#");
 
                     ancher.innerHTML =
-                        `<img class="poster"src="${movie.Poster}"alt="">
+                   `<img class="poster"src="${movie.Poster}"alt="">
                     <div class="suggetion-info">
-                      <h4 class="title"> ${movie.Title}</h4>
-                      <span class="year">Year: ${movie.Year}</span>
+                    <h4 class="title"> ${movie.Title}</h4>
+                    <span class="year">Year: ${movie.Year}</span>
                     </div>`;
 
                     //add click event listener to the ancher
-                    ancher.addEventListener("click", function(){
-                       //dropdown class active;
+                    ancher.addEventListener("click", function(event){
+                    //dropdown class active;
                      suggetion.classList.remove("active"); 
                      searchBox.value = movie.Title;
                      onMovieSelect(movie);
+                     event.preventDefault();
                     })
 
                     suggetion.appendChild(ancher)
@@ -82,7 +83,6 @@ function inputSearch(event) {
                 return;
             }
         })
-
 
 
     }, 1000)
@@ -103,7 +103,9 @@ async function onMovieSelect(movie){
    if (response.data.Error) {
     console.log("no data Found")
    }
-
+    
    console.log(response.data)
-
+    document.querySelector(".movie-details-image").innerHTML= `<img src="${response.data.Poster}" alt="image" />`
+    document.querySelector(".movie-details-title").textContent = response.data.Title;
+  
 }

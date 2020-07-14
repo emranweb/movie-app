@@ -71,7 +71,6 @@ h1 {
 }
 
 .search-wrapper {
-  width: 80%;
   margin: -30px auto 0px auto;
   position: relative;
 }
@@ -183,4 +182,32 @@ cursor: pointer;
   opacity: 1;
   visibility: visible;
   transition: all .4s ease;
+}
+
+.movie-details-title{
+  font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.movie-details-rating, .movie-details-star{
+  display: inline-block;
+  color: #fff;
+}
+.movie-details-star{
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.movide-details-description{
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px
+}
+
+.movide-details-box-office{
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 20px;
 }

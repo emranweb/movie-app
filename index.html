@@ -3,91 +3,92 @@
 
 <head>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
-  <!-- CSS only -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <!-- CSS only -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="nav-area">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col">
-          <div class="logo">Movie App</div>
-        </div>
-        <div class="col d-flex justify-content-center">
-          <ul class="nav">
-            <li class="nav-item"><a href="#">Recent</a></li>
-            <li class="nav-item"><a href="#">Coming Soon</a></li>
-            <li class="nav-item"><a href="#">For Your</a></li>
-            <li class="nav-item"><a href="#">News</a></li>
-          </ul>
-        </div>
-        <div class="col">
-          <div class="login text-right">
-            <a href="#">Log in</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="header">
-    <div class="container">
-      <div class="col">
-        <h1>Your Life Movie</h1>
-      </div>
-    </div>
-  </div>
-
-  <div class="search-area">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <div class="search-wrapper">
-            <input type="text" class="form-control search-box" placeholder="Search Your Favorite Movie">
-            <div class="movie-suggetion-list active">
-               <!-- fetch data goes here -->
+    <div class="nav-area">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col">
+                    <a href="index.html">
+                        <div class="logo">Movie App</div>
+                    </a>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <ul class="nav">
+                        <li class="nav-item"><a href="details.html">Details</a></li>
+                        <li class="nav-item"><a href="#">Coming Soon</a></li>
+                        <li class="nav-item"><a href="#">For Your</a></li>
+                        <li class="nav-item"><a href="#">News</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <div class="login text-right">
+                        <a href="#">Log in</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
-  <div class="showcase-area">
-    <div class="container-fluid">
-      <h2>Now Showing</h2>
-      <div class="movie-list">
-
-        <div class="movie-item">
-          <img src="https://imgc.allpostersimages.com/img/print/u-g-F741DN0.jpg?w=900&h=900&p=0" alt="">
+    <div class="header">
+        <div class="container">
+            <div class="col">
+                <h1>Your Life Movie</h1>
+            </div>
         </div>
-
-        <div class="movie-item">
-          <img src="https://imgc.allpostersimages.com/img/print/u-g-F9IS670.jpg?w=900&h=900&p=0" alt="">
-        </div>
-
-        <div class="movie-item">
-          <img src="https://imgc.allpostersimages.com/img/print/u-g-F9HAJ70.jpg?w=900&h=900&p=0" alt="">
-        </div>
-
-        <div class="movie-item">
-          <img src="https://imgc.allpostersimages.com/img/print/u-g-F9IMQ20.jpg?w=900&h=900&p=0" alt="">
-        </div>
-
-        <div class="movie-item">
-          <img src="https://imgc.allpostersimages.com/img/print/u-g-F4S7PA0.jpg?w=900&h=900&p=0" alt="">
-        </div>
-
-      </div>
     </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-  <script src="index.js"></script>
+    <div class="search-area">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="search-wrapper">
+                        <input type="text" class="form-control search-box" placeholder="Search Your Favorite Movie">
+                        <div class="movie-suggetion-list active">
+                            <!-- fetch data goes here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="movie-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="movie-details-image">
+                        <!-- <img  alt=""> -->
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="movie-details-description">
+                        <h3 class="movie-details-title"></h3>
+
+                        <div class="movie-details-rating"></div>
+
+                        <div class="movie-details-star"></div>
+
+                        <div class="movide-details-box-office"></div>
+
+                        <div class="movide-details-description">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
