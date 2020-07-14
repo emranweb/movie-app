@@ -66,7 +66,15 @@ function inputSearch(event) {
                     <div class="suggetion-info">
                       <h4 class="title"> ${movie.Title}</h4>
                       <span class="year">Year: ${movie.Year}</span>
-                    </div>`
+                    </div>`;
+
+                    //add click event listener to the ancher
+                    ancher.addEventListener("click", function(){
+                       //dropdown class active;
+                     suggetion.classList.remove("active"); 
+                     searchBox.value = movie.Title;
+                     onMovieSelect(movie);
+                    })
 
                     suggetion.appendChild(ancher)
                 }
@@ -78,5 +86,24 @@ function inputSearch(event) {
 
 
     }, 1000)
+
+}
+
+
+
+async function onMovieSelect(movie){
+       const response = await axios.get("http://www.omdbapi.com/",{
+           params:{
+            apikey: "be668231",
+            i:movie.imdbID
+           }
+       })
+
+   //check the empty response
+   if (response.data.Error) {
+    console.log("no data Found")
+   }
+
+   console.log(response.data)
 
 }
