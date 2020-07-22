@@ -1,7 +1,13 @@
-function createAutoComplete({element, renderOption}) {
+function createAutoComplete({
+    element,
+    renderOption,
+    onOptionSelect,
+    OptionTitle,
+    fetchData
+}) {
     element.innerHTML = `
      <div class="search-area">
-     <input type="text" class="form-control search-box" placeholder="Search Your Favorite Movie">
+     <input type="text" class="form-control search-box" placeholder="Search Your Favorite Items">
      <div class="movie-suggetion-list active">
          <!-- fetch data goes here -->
      </div>
@@ -36,28 +42,28 @@ function createAutoComplete({element, renderOption}) {
 
         //store in setup timeout 
         intervalId = setTimeout(() => {
-            const movies = fetchData(event.target.value);
+            const items = fetchData(event.target.value);
 
             //empty the old search data
             suggetion.innerHTML = "";
 
-            movies.then(data => {
+            items.then(data => {
                 if (data.length) {
-                    for (let movie of data) {
+                    for (let item of data) {
                         const ancher = document.createElement("a");
                         ancher.classList.add("item");
                         ancher.setAttribute("herf", "#");
 
-                        ancher.innerHTML = renderOption(movie);
-         
+                        ancher.innerHTML = renderOption(item);
+
 
                         //add click event listener to the ancher
                         ancher.addEventListener("click", function (event) {
                             //dropdown class active;
                             suggetion.classList.remove("active");
-                            searchBox.value = movie.Title;
+                            searchBox.value = OptionTitle(item);
                             //single movie clicck
-                            onMovieSelect(movie);
+                            onOptionSelect(item);
                             event.preventDefault();
                         })
 
