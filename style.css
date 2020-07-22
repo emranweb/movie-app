@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -102,7 +102,7 @@ h1 {
 
 
 
-.movie-suggetion-list{
+.movie-suggetion-list {
   position: absolute;
   top: 56px;
   background: #1c1c1c;
@@ -132,16 +132,17 @@ img {
 }
 
 
-.movie-suggetion-list .item{
+.movie-suggetion-list .item {
   display: block;
   padding: 10px 10px;
   border-bottom: 2px solid #0f0f0f;
   transition: all .3s ease;
+  min-height: 135px;
 }
 
-.movie-suggetion-list .item:hover{
-background-color: #000;  
-cursor: pointer;
+.movie-suggetion-list .item:hover {
+  background-color: #000;
+  cursor: pointer;
 }
 
 .title {
@@ -158,61 +159,63 @@ cursor: pointer;
 
 
 
-.suggetion-info{
+.suggetion-info {
   display: inline-block;
   padding-left: 10px;
   position: relative;
   top: 15px;
 }
 
-.year{
+.year {
   display: inline-block;
   font-size: 16px;
   color: #fff;
 
 }
 
-.movie-suggetion-list{
+.movie-suggetion-list {
   visibility: hidden;
   opacity: 0;
   transition: all .4s ease;
 }
 
-.movie-suggetion-list.active{
+.movie-suggetion-list.active {
   opacity: 1;
   visibility: visible;
   transition: all .4s ease;
 }
 
-.movie-details-title{
+.movie-details-title {
   font-size: 40px;
-    color: #fff;
-    font-weight: 600;
-    margin-bottom: 20px;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
-.movie-details-rating, .movie-details-star{
+.movie-details-rating,
+.movie-details-star {
   display: inline-block;
   color: #fff;
 }
-.movie-details-star{
+
+.movie-details-star {
   margin-left: 10px;
   margin-bottom: 20px;
 }
 
-.movide-details-description{
+.movide-details-description {
   font-size: 16px;
   color: #fff;
   margin-bottom: 30px
 }
 
-.movide-details-box-office{
+.movide-details-box-office {
   font-size: 16px;
   color: #fff;
   margin-bottom: 20px;
 }
 
 
-.search-area{
+.search-area {
   position: relative;
 }

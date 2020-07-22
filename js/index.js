@@ -20,7 +20,17 @@ async function fetchData(input) {
 
 
 createAutoComplete({
-    element: document.querySelector(".search-wrapper")
+    element: document.querySelector(".search-wrapper"),
+    renderOption: (movie) => {
+        let image = movie.Poster === "N/A" ? "https://dummyimage.com/80x114/000/eb2828&text=No+Image" : movie.Poster
+
+
+        return `<img class="poster"src="${image}"alt="">
+     <div class="suggetion-info">
+     <h4 class="title"> ${movie.Title}</h4>
+     <span class="year">Year: ${movie.Year}</span>
+     </div>`;
+    }
 })
 
 

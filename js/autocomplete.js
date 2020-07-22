@@ -1,4 +1,4 @@
-function createAutoComplete({element}) {
+function createAutoComplete({element, renderOption}) {
     element.innerHTML = `
      <div class="search-area">
      <input type="text" class="form-control search-box" placeholder="Search Your Favorite Movie">
@@ -48,12 +48,8 @@ function createAutoComplete({element}) {
                         ancher.classList.add("item");
                         ancher.setAttribute("herf", "#");
 
-                        ancher.innerHTML =
-                            `<img class="poster"src="${movie.Poster}"alt="">
-                             <div class="suggetion-info">
-                             <h4 class="title"> ${movie.Title}</h4>
-                             <span class="year">Year: ${movie.Year}</span>
-                             </div>`;
+                        ancher.innerHTML = renderOption(movie);
+         
 
                         //add click event listener to the ancher
                         ancher.addEventListener("click", function (event) {
