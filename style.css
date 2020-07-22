@@ -8,9 +8,15 @@
   box-sizing: border-box;
 }
 
+
 a {
   text-decoration: none;
 }
+
+ul {
+  list-style: none;
+}
+
 
 body {
   font-family: 'Lora', serif;
@@ -19,11 +25,7 @@ body {
   background-color: var(--primary-color);
 }
 
-
-.nav-area {
-  padding: 15px 0px;
-}
-
+/*============== top area==================*/
 
 
 .logo {
@@ -34,6 +36,12 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+
+.nav-area {
+  padding: 15px 0px;
+}
+
+
 .nav-item a {
   font-size: 18px;
   text-decoration: none;
@@ -41,12 +49,16 @@ body {
   padding: 0px 15px;
 }
 
+
 .login a {
   font-size: 18px;
   text-decoration: none;
   color: #fff;
   padding: 0px 15px;
 }
+
+
+/*============== header area ==================*/
 
 .header {
   background-image: url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
@@ -56,8 +68,6 @@ body {
   background-position: center center;
 }
 
-
-
 h1 {
   font-size: 89px;
   font-weight: 900;
@@ -65,6 +75,12 @@ h1 {
   text-align: center;
 }
 
+
+/*============== search area ==================*/
+
+.search-area {
+  position: relative;
+}
 
 .search-section {
   margin-bottom: 100px;
@@ -75,44 +91,16 @@ h1 {
   position: relative;
 }
 
-.search-section input {
+.search-wrapper input {
   padding: 15px 15px;
   border-radius: 0px;
 }
-
-.sort-area {
-  margin-bottom: 40px;
-
-}
-
-.showcase-area select {
-  -webkit-appearance: none;
-  background: transparent;
-  border: 1px solid white;
-  color: #fff;
-  padding: 7px 17px;
-  margin-right: 40px;
-  border-radius: 5px;
-
-}
-
-.showcase-area option {
-  background-color: var(--primary-color);
-}
-
 
 
 .movie-suggetion-list {
   position: absolute;
   top: 56px;
   background: #1c1c1c;
-}
-
-
-.showcase-area h2 {
-  font-size: 30px;
-  color: #fff;
-  margin-bottom: 40px;
 }
 
 
@@ -124,6 +112,7 @@ h1 {
   flex: 1 0 20%;
   max-width: 20%;
 }
+
 
 img {
   max-width: 100%;
@@ -145,13 +134,9 @@ img {
   cursor: pointer;
 }
 
-.title {
-  font-size: 23px;
-  color: #fff;
-  margin-bottom: 10px;
-}
 
-.poster {
+
+.item .poster {
   width: 80px;
   display: inline-block;
   border-radius: 5px;
@@ -166,7 +151,13 @@ img {
   top: 15px;
 }
 
-.year {
+.suggetion-info .title {
+  font-size: 23px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.suggetion-info .year {
   display: inline-block;
   font-size: 16px;
   color: #fff;
@@ -213,9 +204,4 @@ img {
   font-size: 16px;
   color: #fff;
   margin-bottom: 20px;
-}
-
-
-.search-area {
-  position: relative;
 }
