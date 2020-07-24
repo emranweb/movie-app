@@ -1,6 +1,4 @@
-// auto complete search opttion
-createAutoComplete({
-    element: document.querySelector(".search-wrapper"),
+let autoCompleteConfig = {
     renderOption: (movie) => {
         let image = movie.Poster === "N/A" ? "https://dummyimage.com/80x114/000/eb2828&text=No+Image" : movie.Poster
 
@@ -33,8 +31,22 @@ createAutoComplete({
         //return the search data
         return response.data.Search;
     }
+}
 
+
+
+// auto complete search opttion
+createAutoComplete({
+    ...autoCompleteConfig,
+    element: document.querySelector(".left-search-wrapper"),
 })
+
+// auto complete search opttion
+createAutoComplete({
+    ...autoCompleteConfig,
+    element: document.querySelector(".right-search-wrapper"),
+})
+
 
 
 // single movie select option

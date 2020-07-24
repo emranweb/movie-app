@@ -205,3 +205,15 @@ img {
   color: #fff;
   margin-bottom: 20px;
 }
+
+
+.btn.btn-default.btn-primary{
+  background: #030001;
+  padding: 14px 20px;
+  border: none;
+}
+
+.btn:active, .btn:focus{
+  box-shadow: none;
+  outline: none;
+}
