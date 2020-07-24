@@ -38,7 +38,7 @@ createAutoComplete({
     element: document.querySelector(".left-search-wrapper"),
 
     onOptionSelect(movie) {
-        onMovieSelect(movie, document.querySelector(".movie-details-left"))
+        onMovieSelect(movie, document.querySelector(".movie-details-left"), "left")
     }
 })
 
@@ -47,16 +47,17 @@ createAutoComplete({
     ...autoCompleteConfig,
     element: document.querySelector(".right-search-wrapper"),
     onOptionSelect(movie) {
-        onMovieSelect(movie, document.querySelector(".movie-details-right"))
+        onMovieSelect(movie, document.querySelector(".movie-details-right"), "right")
     }
 
 })
 
 
+let leftItems ;
+let rightItems;
 
 // single movie select option
-
-async function onMovieSelect(movie, element) {
+async function onMovieSelect(movie, element, side) {
     const response = await axios.get("http://www.omdbapi.com/", {
         params: {
             apikey: "be668231",
@@ -69,8 +70,22 @@ async function onMovieSelect(movie, element) {
         console.log("no data Found")
     }
 
+    if(side==="left"){
+        leftItems = response.data;
+    }else{
+        rightItems = response.data;
+    }
+
+    if(leftItems && rightItems){
+        runCompare();
+    }
+
     element.innerHTML = movieTemplate(response.data)
 
+}
+
+function runCompare(){
+    console.log("comparison start")
 }
 
 
