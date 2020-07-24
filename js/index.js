@@ -11,9 +11,6 @@ let autoCompleteConfig = {
     OptionTitle(movie) {
         return movie.Title;
     },
-    onOptionSelect(movie) {
-        onMovieSelect(movie)
-    },
     //async data fetch from server
     async fetchData(input) {
         const response = await axios.get("http://www.omdbapi.com/", {
@@ -39,19 +36,27 @@ let autoCompleteConfig = {
 createAutoComplete({
     ...autoCompleteConfig,
     element: document.querySelector(".left-search-wrapper"),
+
+    onOptionSelect(movie) {
+        onMovieSelect(movie, document.querySelector(".movie-details-left"))
+    }
 })
 
 // auto complete search opttion
 createAutoComplete({
     ...autoCompleteConfig,
     element: document.querySelector(".right-search-wrapper"),
+    onOptionSelect(movie) {
+        onMovieSelect(movie, document.querySelector(".movie-details-right"))
+    }
+
 })
 
 
 
 // single movie select option
 
-async function onMovieSelect(movie) {
+async function onMovieSelect(movie, element) {
     const response = await axios.get("http://www.omdbapi.com/", {
         params: {
             apikey: "be668231",
@@ -64,7 +69,41 @@ async function onMovieSelect(movie) {
         console.log("no data Found")
     }
 
-    document.querySelector(".movie-details-image").innerHTML = `<img src="${response.data.Poster}" alt="image" />`
-    document.querySelector(".movie-details-title").textContent = response.data.Title;
+    element.innerHTML = movieTemplate(response.data)
 
+}
+
+
+
+function movieTemplate(movie) {
+    return `
+<div class="card">
+  <img src="${movie.Poster}" class="card-img-top" alt="">
+  <div class="card-body">
+  <h5 class="card-title">${movie.Title}</h5>
+  <p class="card-text">${movie.Plot}</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+  <h5 class="card-title">Awards</h5>
+  <p class="card-text">${movie.Awards}</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+  <h5 class="card-title">Box Office</h5>
+  <p class="card-text">${movie.BoxOffice}</p>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+  <h5 class="card-title">Meta Score</h5>
+  <p class="card-text">${movie.Metascore}</p>
+  </div>
+</div>
+
+  `
 }
