@@ -85,12 +85,34 @@ async function onMovieSelect(movie, element, side) {
 }
 
 function runCompare(){
-    console.log("comparison start")
+   let leftState = document.querySelectorAll(".movie-details-left .card");
+   let rightState = document.querySelectorAll(".movie-details-right .card");
+ 
+   leftState.forEach((left,index)=>{
+       console.log(leftState);
+       console.log(index)
+   })
+
 }
 
 
 
 function movieTemplate(movie) {
+  let doller = parseInt(movie.BoxOffice.replace(/\$/g,'').replace(/,/g,''));
+  let metascore  = parseInt(movie.Metascore);
+  let award = movie.Awards.split(" ").reduce((prev, item)=>{
+      let value = parseInt(item)
+     
+      if(isNaN(value)){
+          return prev;
+      }else{
+         return prev += value;
+      }
+
+  },0);
+ 
+
+
     return `
 <div class="card">
   <img src="${movie.Poster}" class="card-img-top" alt="">
@@ -100,20 +122,20 @@ function movieTemplate(movie) {
   </div>
 </div>
 
-<div class="card">
+<div class="card" data-value="${award}">
   <div class="card-body">
   <h5 class="card-title">Awards</h5>
   <p class="card-text">${movie.Awards}</p>
   </div>
 </div>
 
-<div class="card">
+<div class="card" data-value="${doller}">
   <div class="card-body">
   <h5 class="card-title">Box Office</h5>
   <p class="card-text">${movie.BoxOffice}</p>
   </div>
 </div>
-<div class="card">
+<div class="card" data-value="${metascore}">
   <div class="card-body">
   <h5 class="card-title">Meta Score</h5>
   <p class="card-text">${movie.Metascore}</p>
