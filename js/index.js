@@ -85,13 +85,11 @@ async function onMovieSelect(movie, element, side) {
 }
 
 function runCompare(){
+
    let leftState = document.querySelectorAll(".movie-details-left .card");
-   let rightState = document.querySelectorAll(".movie-details-right .card");
- 
-   leftState.forEach((left,index)=>{
-       console.log(leftState);
-       console.log(index)
-   })
+   setTimeout(function(){
+       console.log(hi)
+   },1000);
 
 }
 
