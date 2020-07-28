@@ -77,7 +77,7 @@ async function onMovieSelect(movie, element, side) {
     }
 
     if(leftItems && rightItems){
-        runCompare();
+     runCompare();
     }
 
     element.innerHTML = movieTemplate(response.data)
@@ -85,11 +85,11 @@ async function onMovieSelect(movie, element, side) {
 }
 
 function runCompare(){
-
    let leftState = document.querySelectorAll(".movie-details-left .card");
-   setTimeout(function(){
-       console.log(hi)
-   },1000);
+   let rightState = document.querySelectorAll(".movie-details-right .card");
+    
+   console.log(rightState)
+
 
 }
 
@@ -99,7 +99,7 @@ function movieTemplate(movie) {
   let doller = parseInt(movie.BoxOffice.replace(/\$/g,'').replace(/,/g,''));
   let metascore  = parseInt(movie.Metascore);
   let award = movie.Awards.split(" ").reduce((prev, item)=>{
-      let value = parseInt(item)
+  let value = parseInt(item)
      
       if(isNaN(value)){
           return prev;
