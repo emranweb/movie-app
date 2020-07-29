@@ -218,3 +218,7 @@ img {
   box-shadow: none;
   outline: none;
 }
+
+.show-compare.hide{
+  opacity:0;
+}

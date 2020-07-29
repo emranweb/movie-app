@@ -77,19 +77,36 @@ async function onMovieSelect(movie, element, side) {
     }
 
     if(leftItems && rightItems){
-     runCompare();
+      document.querySelector(".show-compare").classList.remove("hide");
     }
 
     element.innerHTML = movieTemplate(response.data)
 
 }
 
+
+let showCompare = document.querySelector(".show-compare");
+showCompare.addEventListener("click", runCompare)
+
+
+
 function runCompare(){
    let leftState = document.querySelectorAll(".movie-details-left .card");
    let rightState = document.querySelectorAll(".movie-details-right .card");
     
-   console.log(rightState)
+   leftState.forEach((left,index)=>{
+    let right = rightState[index];
 
+    const leftSideValue = parseInt(left.dataset.value);
+    const rightSideValue = parseInt(right.dataset.value);
+        if(rightSideValue>leftSideValue){
+            left.classList.remove("bg-light");
+            left.classList.add("bg-warning")
+        }else{
+            right.classList.remove("bg-light");
+            right.classList.add("bg-warning") 
+        }
+   })
 
 }
 
@@ -112,7 +129,7 @@ function movieTemplate(movie) {
 
 
     return `
-<div class="card">
+<div class="card bg-light">
   <img src="${movie.Poster}" class="card-img-top" alt="">
   <div class="card-body">
   <h5 class="card-title">${movie.Title}</h5>
@@ -120,20 +137,20 @@ function movieTemplate(movie) {
   </div>
 </div>
 
-<div class="card" data-value="${award}">
+<div class="card bg-light" data-value="${award}">
   <div class="card-body">
   <h5 class="card-title">Awards</h5>
   <p class="card-text">${movie.Awards}</p>
   </div>
 </div>
 
-<div class="card" data-value="${doller}">
+<div class="card bg-light" data-value="${doller}">
   <div class="card-body">
   <h5 class="card-title">Box Office</h5>
   <p class="card-text">${movie.BoxOffice}</p>
   </div>
 </div>
-<div class="card" data-value="${metascore}">
+<div class="card bg-light" data-value="${metascore}">
   <div class="card-body">
   <h5 class="card-title">Meta Score</h5>
   <p class="card-text">${movie.Metascore}</p>
